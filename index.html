@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>七夕快乐，天天开心~</title>
+    <!--引入fullpage.js插件的样式，必须-->
+    <!-- <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.css"
+    /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"
+    ></script>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div id="fullpage">
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="girl girl1" src="./img/girl1.png" alt="" />
+        <img class="lotus" src="./img/lotus.png" alt="" />
+        <img class="camera" src="./img/camera.png" alt="" />
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="girl girl2" src="./img/girl2.png" alt="" />
+        <img class="lotus" src="./img/lotus.png" alt="" />
+        <img class="star" src="./img/star.png" alt="" />
+        <img class="glass" src="./img/glass.png" alt="" />
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="girl girl3" src="./img/girl3.png" alt="" />
+        <img class="lotus" src="./img/lotus.png" alt="" />
+        <img class="flower" src="./img/flower.png" alt="" />
+        <img class="letter" src="./img/letter.png" alt="" />
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="girl girl4" src="./img/girl4.png" alt="" />
+        <img class="calendar" src="./img/calendar.png" alt="" />
+        <img class="love-star1" src="./img/love-star.png" alt="" />
+        <img class="love-star2" src="./img/love-star.png" alt="" />
+      </div>
+      <div class="section">
+        <img class="stripe1" src="./img/stripe1.png" alt="" />
+        <img class="stripe2" src="./img/stripe2.png" alt="" />
+        <img class="leaf" src="./img/leaf.png" alt="" />
+        <img class="paper" src="./img/paper.png" alt="" />
+        <div class="envelope">
+          <img class="envelope-img" src="./img/envelope.png" alt="" />
+        </div>
+        <img class="cloud cloud1" src="./img/cloud1.png" alt="" />
+        <img class="cloud cloud2" src="./img/cloud2.png" alt="" />
+        <img class="cloud cloud3" src="./img/cloud3.png" alt="" />
+        <img class="star2" src="./img/star2.png" alt="" />
+        <img class="sun" src="./img/sun.png" alt="" />
+        <div class="btn">开启红包</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const WIDTH = 750; //设计稿尺寸
+    const setView = () => {
+      document.documentElement.style.fontSize =
+        (100 * screen.width) / WIDTH + "px";
+    };
+    window.onorientationchange = setView;
+    window.addEventListener("resize", () => {
+      setView();
+    });
+    setView();
+  </script>
+  <script>
+    $(function () {
+      // 滚屏动画
+      $("#fullpage").fullpage({
+        start: 0,
+        afterLoad: (e) => {
+          console.log(e);
+        }
+      });
+    });
+  </script>
+</html>
