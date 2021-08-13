@@ -28,6 +28,111 @@
     height: 100vh !important;
     background-color: #ffc3b5;
     position: relative;
+    .title {
+      width: 3.64rem;
+      height: 0.42rem;
+      object-fit: cover;
+      margin-top: 1.8rem;
+      opacity: 0;
+      margin-left: 0.74rem;
+    }
+    .content {
+      width: 100%;
+      font-size: 0.3rem;
+      padding-left: 0.74rem;
+      line-height: 0.55rem;
+      padding-top: 0.2rem;
+      opacity: 0;
+      color: #573a36;
+      span {
+        color: #f1634c;
+      }
+    }
+    .page2_top {
+      font-size: 0.3rem;
+      color: #573a36;
+      width: 2.85rem;
+      position: absolute;
+      top: 3.5rem;
+      left: 2.3rem;
+      line-height: 0.55rem;
+      z-index: 9;
+      opacity: 0;
+    }
+    .page2_bottom {
+      font-size: 0.3rem;
+      opacity: 0;
+      color: #573a36;
+      width: 2.85rem;
+      position: absolute;
+      top: 6.2rem;
+      left: 2.3rem;
+      line-height: 0.55rem;
+      z-index: 9;
+      &::before {
+        content: "";
+        display: block;
+        width: 0.06rem;
+        height: 0.38rem;
+        background-color: #f1634c;
+        position: absolute;
+        left: -0.3rem;
+        top: 0.1rem;
+        border-radius: 0.03rem;
+      }
+    }
+    .page3_content {
+      font-size: 0.32rem;
+      color: #5e403b;
+      text-align: center;
+      width: 5.65rem;
+      position: absolute;
+      top: 3.16rem;
+      left: 0.95rem;
+      line-height: 0.65rem;
+      z-index: 9;
+    }
+    .page4_content {
+      font-size: 0.32rem;
+      color: #5e403b;
+      text-align: center;
+      width: 5.65rem;
+      position: absolute;
+      top: 3.16rem;
+      left: 0.95rem;
+      line-height: 0.65rem;
+      z-index: 9;
+      padding: 0 0.4rem;
+      text-align: left;
+      text-indent: 2em;
+    }
+    .page5_content {
+      font-size: 0.32rem;
+      color: #5e403b;
+      text-align: center;
+      width: 5.65rem;
+      position: absolute;
+      top: 4.16rem;
+      left: 0.95rem;
+      line-height: 0.65rem;
+      opacity: 0;
+      z-index: 9;
+      padding: 0 0.4rem;
+    }
+    .qixiFun {
+      width: 4.8rem;
+      height: 0.64rem;
+      line-height: 0.64rem;
+      border-radius: 0.1rem;
+      background-color: #f1634c;
+      color: #fff;
+      text-align: center;
+      font-size: 0.32rem;
+      position: absolute;
+      top: 3.32rem;
+      left: 1.35rem;
+      z-index: 9;
+    }
     .stripe1,
     .stripe2 {
       width: 100vw;
@@ -57,6 +162,7 @@
     .girl1 {
       width: 2.7rem;
       height: 3.25rem;
+      opacity: 0;
       bottom: 0;
       left: 0;
     }
@@ -66,11 +172,13 @@
       bottom: 0;
       left: 0.52rem;
       z-index: 3;
+      opacity: 0;
     }
     .girl3 {
       width: 3.11rem;
       height: 3.28rem;
       bottom: 0.6rem;
+      opacity: 0;
       left: 0rem;
       z-index: 3;
     }
@@ -79,7 +187,15 @@
       height: 3.61rem;
       bottom: 0rem;
       left: 1.54rem;
+      opacity: 0;
       z-index: 3;
+    }
+    .girl5 {
+      width: 2.74rem;
+      height: 3.68rem;
+      left: 0.2rem;
+      bottom: 0.2rem;
+      z-index: 2;
     }
     .lotus {
       width: 1.36rem;
@@ -155,18 +271,24 @@
       height: 0.8rem;
       top: 2rem;
       left: 0.6rem;
+      z-index: 9;
+      opacity: 0;
     }
     .cloud2 {
       top: 2.1rem;
       left: 3.8rem;
       width: 1.07rem;
       height: 0.55rem;
+      z-index: 9;
+      opacity: 0;
     }
     .cloud3 {
-      top: 1.85rem;
+      top: 1.87rem;
       left: 1.8rem;
       width: 1.28rem;
       height: 0.66rem;
+      z-index: 9;
+      opacity: 0;
     }
     .paper {
       position: absolute;
@@ -175,6 +297,10 @@
       margin-left: 0.95rem;
       width: 5.64rem;
       height: 7.11rem;
+      opacity: 0;
+    }
+    .output-wrap2 {
+      opacity: 0;
     }
     .envelope {
       width: 6.25rem;
@@ -183,6 +309,7 @@
       top: 8.51rem;
       left: 50%;
       margin-left: -3.125rem;
+      opacity: 0;
       background-color: #cd604e;
     }
     .envelope-img {
@@ -195,9 +322,10 @@
       width: 1.2rem;
       height: 1.06rem;
       position: absolute;
-      left: 50%;
+      left: 42%;
       top: 8.6rem;
       z-index: 8;
+      opacity: 0;
       transform: translateX(-50%);
     }
     .sun {
@@ -212,17 +340,21 @@
       width: 3.38rem;
       line-height: 0.84rem;
       text-align: center;
-      color: #fff;
+      color: #f1634c;
       border-radius: 0.42rem;
       font-size: 0.32rem;
       position: absolute;
-      background-color: #f1634c;
-      left: 50%;
-      top: 70%;
+      left: 29%;
+      opacity: 0;
+      top: 8.3rem;
       transform: translateX(-50%);
       z-index: 8;
+      border: solid #f1634c 1px;
       box-shadow: 0px 5px 7px rgba(249, 123, 102, 0.15);
       cursor: pointer;
+    }
+    .typing-cursor {
+      display: none;
     }
   }
 }
