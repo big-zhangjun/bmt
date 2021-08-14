@@ -48,6 +48,10 @@
   animation: fadeIn 1s both 100ms;
 }
 
+.tureeDFlip {
+  animation: tureeDFlip 1s both 100ms;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -136,5 +140,13 @@
   100% {
     opacity: 1;
     transform: translate3d(0, 0%, 0);
+  }
+}
+@keyframes tureeDFlip {
+  0% {
+    transform: scale(0) rotateY(0deg);
+  }
+  100% {
+    transform: scale(1) rotateY(360deg);
   }
 }

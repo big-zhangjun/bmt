@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
+    <!-- bgm -->
     <audio
       id="musicStar"
       src="https://zino-common.oss-cn-beijing.aliyuncs.com/minib/bgm.mp3"
@@ -28,6 +29,13 @@
     <div class="animate-wrapper rotate">
       <img src="./img/audio.png" alt="" />
     </div>
+
+    <!-- 加载 -->
+    <div class="loadIng" id="loading">
+      <img src="./img/loading2.gif" alt="" />
+    </div>
+
+    <!-- 主内容 -->
     <div id="fullpage">
       <div class="section">
         <div class="content"></div>
@@ -78,9 +86,7 @@
         <div class="page3_content">
           <div id="source" style="position: fixed; left: -9999px">
             还能想起<br />你来北京的前一天晚上<br />紧张激动的感受<br />以及见面时候的欢喜<br />
-            当和你一起走向地铁就坐时<br />
-            我感觉那时候<br />
-            我眼睛里应该有光的
+            想起在地铁上第一次拉起你的手</br>以及第一次的接吻</br>我一辈子都不会忘记
           </div>
           <div id="output-wrap">
             <span id="output"></span>
@@ -110,8 +116,8 @@
         <div class="page4_content">
           <div id="source2" style="position: fixed; left: -9999px">
             和你一起在北京生活的短短 12天，第一次感受到一个不一样
-            的家。每天下班后，都迫不及待 想要回来见你。想要给你买好吃的。
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;尽管我们每天都吵架，哈哈，但也算是一种特殊的回忆了。
+            的家。每天下班后，都迫不及待 想要回来见你。想要给你买好吃的。真的很想照顾你一辈子。
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当送你上飞机离开后，真的就很舍不得你，好想不顾一切和你一起走
           </div>
           <div id="output-wrap2" class="output-wrap">
             <span id="output2"></span>
@@ -128,13 +134,21 @@
         <img class="love-star2 zoomInToOut" src="./img/love-star.png" alt="" />
         <div class="qixiFun">七夕快乐</div>
         <div class="page5_content" id="page5_content">
-          最后，在这个特殊的日子里 希望你以后可以天天开心
-          不要太辛苦了，工作和生活 都会顺顺利利的，你肯定会觉得
-          我说l来说去都是这些，哈哈 那我在送一个小礼物，嘿嘿~
+          想说的话太多，最后，在这个特殊的日子里，希望你以后可以天天开心
+          不要太辛苦了，工作和生活，都会顺顺利利的，你肯定会觉得，我说来说去都是这些，哈哈那我在送一个小礼物，嘿嘿~
         </div>
         <div class="btn" id="btn">开启红包</div>
         <img class="girl girl5" src="./img/girl5.png" alt="" />
       </div>
+    </div>
+
+    <!-- 礼物 -->
+    <div class="gift" id="gift">
+      <div class="money" id="money">
+        <img src="./img/money.png" alt="" />
+        <div class="btn2" id="btn2">红包点这里</div>
+      </div>
+      <img class="close" id="close" src="./img/close.png" alt="" />
     </div>
   </body>
   <script>
@@ -148,6 +162,9 @@
       setView();
     });
     setView();
+    setTimeout(() => {
+      $("#loading").css("display", "none");
+    }, 1500);
   </script>
   <script>
     let flag = true;
@@ -241,5 +258,22 @@
         onLeave: (v, e, direction) => {}
       });
     });
+
+    // 开启红包
+    $("#btn").click(() => {
+      $("#gift").css("display", "flex");
+      $("#money").addClass("tureeDFlip");
+      $("#close").addClass("tureeDFlip");
+    });
+
+    $("#close").click(() => {
+      $("#gift").css("display", "none");
+      $("#money").removeClass("tureeDFlip");
+      $("#close").removeClass("tureeDFlip");
+    });
+
+    $("#btn2").click(()=>{
+      window.location.href = "./resoult.html"
+    })
   </script>
 </html>
