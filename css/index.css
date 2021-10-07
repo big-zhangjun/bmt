@@ -370,7 +370,7 @@
   display: none;
 }
 .gift {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -387,6 +387,7 @@
   width: 5.68rem;
   height: 7.52rem;
   position: relative;
+  z-index: 100;
   cursor: pointer;
   /* 3D变形 */
   transform-style: preserve-3d;

@@ -14,6 +14,7 @@
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/fullpage.min.js"></script>
     <script src="js/typing.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
     <link rel="stylesheet" href="./css/animation.css" />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
@@ -165,6 +166,12 @@
     setTimeout(() => {
       $("#loading").css("display", "none");
     }, 1500);
+
+    document.addEventListener("WeixinJSBridgeReady", function () {
+      let audio = document.getElementById('musicStar');
+	    audio.play();
+		    /**musicStar为音乐audio的 id**/
+	    }, false);
   </script>
   <script>
     let flag = true;
