@@ -156,6 +156,27 @@
       .person-show .legs > div {
         border-top-color: #151618;
       }
+      .fadeIn {
+        animation: fade-in 3s both 1000ms alternate;
+      }
+      .fadeIn2 {
+        animation: fade-in 3s both 4000ms alternate;
+      }
+      .fadeIn3 {
+        animation: fade-in 5s both 7000ms alternate;
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
 
       @keyframes star-scale {
         from {
@@ -216,12 +237,28 @@
         transform: translateX(-50%);
         width: 4rem;
       }
+      .font2 {
+        position: fixed;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5rem;
+      }
+      .font3 {
+        position: fixed;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6rem;
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <img class="font" src="./img/font.png" alt="" />
+      <img class="font fadeIn" src="./img/font.png" alt="" />
+      <img class="font3 fadeIn3" src="./img/font2.png" alt="" />
+      <img class="font2 fadeIn2" src="./img/font3.png" alt="" />
       <!-- <div class="happy-birthday__container">
         <div id="sheng"></div>
         <div id="ri"></div>
@@ -411,26 +448,6 @@
       const NAME_CONFIG = {
         ...BASE_CONFIG,
         strokeColor: "#87db92"
-      };
-
-      const getWriterList = () => {
-        let writerList = [];
-        writerList.push(HanziWriter.create("sheng", "生", WRITER_CONFIG));
-        writerList.push(HanziWriter.create("ri", "日", WRITER_CONFIG));
-        writerList.push(HanziWriter.create("kuai", "快", WRITER_CONFIG));
-        writerList.push(HanziWriter.create("le", "乐", WRITER_CONFIG));
-        writerList.push(HanziWriter.create("ya", "吖", WRITER_CONFIG));
-        writerList.push(HanziWriter.create("xiao", "小", NAME_CONFIG));
-        writerList.push(HanziWriter.create("han", "寒", NAME_CONFIG));
-        writerList.push(HanziWriter.create("cao", "草", NAME_CONFIG));
-        return writerList;
-      };
-
-      const generateAnimateWriter = async (writerList) => {
-        const writerCount = writerList.length;
-        for (const writer of writerList) {
-          await writer.animateCharacter();
-        }
       };
 
       setInterval(() => {
