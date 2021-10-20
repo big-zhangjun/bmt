@@ -188,17 +188,40 @@
         animation: star-scale 2s;
         animation-iteration-count: infinite;
       }
-
+      .bmt {
+        position: absolute;
+        z-index: 99;
+        width: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 7.8vh;
+      }
+      .shade {
+        position: absolute;
+        z-index: 99;
+        width: 50px;
+        left: 50.5%;
+        transform: translateX(-50%);
+        bottom: 6vh;
+      }
       #my-canvas {
         position: absolute;
         width: 100%;
         height: 80vh;
+      }
+      .font {
+        position: fixed;
+        top: 10vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4rem;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
+      <img class="font" src="./img/font.png" alt="" />
       <!-- <div class="happy-birthday__container">
         <div id="sheng"></div>
         <div id="ri"></div>
@@ -211,7 +234,7 @@
         <div id="cao"></div>
       </div> -->
       <canvas id="my-canvas"></canvas>
-      <div class="person person-reflect">
+      <!-- <div class="person person-reflect">
         <div class="head"></div>
         <div class="left-hand"></div>
         <div class="right-hand"></div>
@@ -223,8 +246,10 @@
           <div class="left"></div>
           <div class="right"></div>
         </div>
-      </div>
-      <div class="person person-show">
+      </div> -->
+      <img class="bmt" src="./img/bmt2.png" alt="" />
+      <!-- <img class="shade" src="./img/bmt3.png" alt="" /> -->
+      <!-- <div class="person person-show">
         <div class="head"></div>
         <div class="left-hand"></div>
         <div class="right-hand"></div>
@@ -236,11 +261,21 @@
           <div class="left"></div>
           <div class="right"></div>
         </div>
-      </div>
+      </div> -->
       <div class="land"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.2/dist/hanzi-writer.min.js"></script>
     <script>
+      const WIDTH = 750; //设计稿尺寸
+      const setView = () => {
+        document.documentElement.style.fontSize =
+          (100 * screen.width) / WIDTH + "px";
+      };
+      window.onorientationchange = setView;
+      window.addEventListener("resize", () => {
+        setView();
+      });
+      setView();
       // 烟花效果
       var canvas = document.getElementById("my-canvas");
       var context = canvas.getContext("2d");
@@ -396,18 +431,14 @@
         for (const writer of writerList) {
           await writer.animateCharacter();
         }
-
-        document.getElementsByClassName(
-          "happy-birthday__container"
-        )[0].style.opacity = 0;
-        fireRandom();
-        setInterval(() => {
-          fireRandom();
-        }, 2000);
       };
 
-      const writerList = getWriterList();
-      generateAnimateWriter(writerList);
+      setInterval(() => {
+        fireRandom();
+      }, 3000);
+
+      // const writerList = getWriterList();
+      // generateAnimateWriter(writerList);
     </script>
   </body>
 </html>
