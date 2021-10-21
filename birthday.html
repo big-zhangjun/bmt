@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HAPPY BIRTHDAY</title>
+    <title>生日快乐~</title>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
     <style>
       * {
         margin: 0;
@@ -163,7 +164,28 @@
         animation: fade-in 3s both 4000ms alternate;
       }
       .fadeIn3 {
-        animation: fade-in 5s both 7000ms alternate;
+        animation: fade-in 3s both 7000ms alternate;
+      }
+      .fadeIn4 {
+        animation: fade-in 3s both 10000ms alternate;
+      }
+      .fadeIn5 {
+        animation: fade-in 3s both 13000ms alternate;
+      }
+      .fadeIn6 {
+        animation: fade-in 3s both 16000ms alternate;
+      }
+      .fadeIn7 {
+        animation: fade-in 3s both 19000ms alternate;
+      }
+      .fadeIn8 {
+        animation: fade-in 3s both 22000ms alternate;
+      }
+      .fadeIn9 {
+        animation: fade-in 3s both 25000ms alternate;
+      }
+      .fadeIn10 {
+        animation: fade-in 3s both 28000ms alternate;
       }
       @keyframes fade-in {
         0% {
@@ -251,58 +273,47 @@
         transform: translateX(-50%);
         width: 6rem;
       }
+      .f4 {
+        width: 3rem;
+      }
     </style>
   </head>
 
   <body>
+    <audio
+      id="musicStar"
+      src="./img/wt.mp3"
+      autoplay="true"
+      preload="auto"
+      loop="loop"
+    ></audio>
     <div class="container">
       <img class="font fadeIn" src="./img/font.png" alt="" />
-      <img class="font3 fadeIn3" src="./img/font2.png" alt="" />
+      <img class="font2 fadeIn3" src="./img/f1.png" alt="" />
+      <img class="font f4 fadeIn4" src="./img/f2.png" alt="" />
+      <img class="font3 fadeIn5" src="./img/f3.png" alt="" />
+      <img class="font fadeIn6" src="./img/f4.png" alt="" />
+      <img class="font3 fadeIn7" src="./img/f5.png" alt="" />
+      <img class="font3 fadeIn8" src="./img/f6.png" alt="" />
+      <img class="font3 fadeIn9" src="./img/f7.png" alt="" />
       <img class="font2 fadeIn2" src="./img/font3.png" alt="" />
-      <!-- <div class="happy-birthday__container">
-        <div id="sheng"></div>
-        <div id="ri"></div>
-        <div id="kuai"></div>
-        <div id="le"></div>
-        <div id="ya"></div>
-        <div id="site"></div>
-        <div id="xiao"></div>
-        <div id="han"></div>
-        <div id="cao"></div>
-      </div> -->
+      <img class="font f4 fadeIn10" src="./img/f8.png" alt="" />
       <canvas id="my-canvas"></canvas>
-      <!-- <div class="person person-reflect">
-        <div class="head"></div>
-        <div class="left-hand"></div>
-        <div class="right-hand"></div>
-        <div class="body-container">
-          <div class="body-content"></div>
-          <div class="body-radius"></div>
-        </div>
-        <div class="legs">
-          <div class="left"></div>
-          <div class="right"></div>
-        </div>
-      </div> -->
       <img class="bmt" src="./img/bmt2.png" alt="" />
-      <!-- <img class="shade" src="./img/bmt3.png" alt="" /> -->
-      <!-- <div class="person person-show">
-        <div class="head"></div>
-        <div class="left-hand"></div>
-        <div class="right-hand"></div>
-        <div class="body-container">
-          <div class="body-content"></div>
-          <div class="body-radius"></div>
-        </div>
-        <div class="legs">
-          <div class="left"></div>
-          <div class="right"></div>
-        </div>
-      </div> -->
       <div class="land"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.2/dist/hanzi-writer.min.js"></script>
     <script>
+      document.addEventListener(
+        "WeixinJSBridgeReady",
+        function () {
+          let audio = document.getElementById("musicStar");
+          audio.play();
+          /**musicStar为音乐audio的 id**/
+        },
+        false
+      );
+
       const WIDTH = 750; //设计稿尺寸
       const setView = () => {
         document.documentElement.style.fontSize =
